@@ -94,19 +94,36 @@ var countDown = (launchTime, statusAbbrev) => {
   let getTime = launchTime.slice(11);
   getTime = getTime.split("Z");
   getTime = getTime[0].split(":");
-
-  let fullDate = new Date();
-  var theDate = fullDate.getDate();
-  var theMonth = fullDate.getMonth();
-  var theYear = fullDate.getFullYear();
-
   var hours = getTime[0];
   var minutes = getTime[1];
   var seconds = getTime[2];
 
-  var timeArray = "[ T- " + hours + " : " + minutes + " : " + seconds + " ]";
+  let fullDate = new Date();
+  var theDate = fullDate.getDate();
+  var theMonth = fullDate.getMonth() + 1;
+  var theYear = fullDate.getFullYear();
+  var theHour = fullDate.getHours() + 1;
+  var theMinute = fullDate.getMinutes() + 1;
+  var theSecond = fullDate.getSeconds() + 1;
 
-  return timeArray;
+  let launchDate = launchTime.split("T");
+  launchDate = launchDate[0].split("-");
+  var launchYear = parseInt(launchDate[0]);
+  var launchMonth = parseInt(launchDate[1]);
+  var launchDay = parseInt(launchDate[2]);
+
+  if (
+    statusAbbrev === "Go" &&
+    launchYear === theYear &&
+    launchMonth === theMonth &&
+    launchDay === theDate
+  ) {
+    console.log("something met this criteria!");
+  }
+
+  var timeParsed = "[ T- " + hours + " : " + minutes + " : " + seconds + " ]";
+
+  return timeParsed;
 };
 
 launch();
