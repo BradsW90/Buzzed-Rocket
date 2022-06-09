@@ -24,14 +24,6 @@ let launch = () => {
       response.json().then((data) => {
         var dataArray = data.results;
 
-        /*let test = dataArray[0].net;
-        test = test.slice(11);
-        test = test.split("Z");
-        test = test[0].split(":");
-        for (i = 0; i < test.length; i++) {
-          console.log(parseInt(test[i]));
-        }*/
-
         for (i = 0; i < dataArray.length; i++) {
           var rocket = data.results[i].rocket.configuration.full_name;
           var rocketImgUrl = data.results[i].image;
@@ -85,7 +77,10 @@ let launch = () => {
           statusContainerEl.appendChild(launchStatusEl);
 
           var launchTimeEl = document.createElement("p");
-          launchTimeEl.innerText = launchTime;
+
+          var convertedTime = countDown(launchTime, statusAbbrev);
+
+          launchTimeEl.innerText = convertedTime;
           card.appendChild(launchTimeEl);
 
           rocketDisplay.appendChild(card);
@@ -93,6 +88,25 @@ let launch = () => {
       });
     }
   });
+};
+
+var countDown = (launchTime, statusAbbrev) => {
+  let getTime = launchTime.slice(11);
+  getTime = getTime.split("Z");
+  getTime = getTime[0].split(":");
+
+  let fullDate = new Date();
+  var theDate = fullDate.getDate();
+  var theMonth = fullDate.getMonth();
+  var theYear = fullDate.getFullYear();
+
+  var hours = getTime[0];
+  var minutes = getTime[1];
+  var seconds = getTime[2];
+
+  var timeArray = "[ T- " + hours + " : " + minutes + " : " + seconds + " ]";
+
+  return timeArray;
 };
 
 launch();
