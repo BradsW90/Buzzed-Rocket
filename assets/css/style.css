@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --good-color: rgb(225, 225, 100);
+  --bad-color: rgb(225, 100, 100);
+  --no-color: rgb(150, 150, 150);
+  --flight-color: rgb(100, 225, 100);
+}
+
+.rocket-display {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: small;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.rocket-card {
+  height: 350px;
+  width: 200px;
+  background-image: linear-gradient(rgb(0, 0, 0), rgb(50, 50, 175));
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.rocket-name {
+  text-align: center;
+  font-size: 22px;
+}
+
+.rocket-card img {
+  flex: 1 100%;
+  height: 100px;
+  width: 100px;
+  margin: 0 10px;
+}
+
+.rocket-card h3 {
+  text-align: center;
+}
+
+.wrapper span {
+  font-size: 18px;
+}
+
+.wrapper p {
+  display: inline;
+}
+
+.good-color {
+  color: var(--good-color);
+}
+
+.bad-color {
+  color: var(--bad-color);
+}
+
+.no-color {
+  color: var(--no-color);
+}
+
+.flight-color {
+  color: var(--flight-color);
+}
