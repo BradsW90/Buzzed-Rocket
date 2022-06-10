@@ -1,0 +1,16 @@
+:root {
+    --brown: #4B372B;
+    --gold: #D7B668;
+    --sky-blue: #9EC8Ca;
+    --white: #FFFFFF;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    color: var(--brown);
+}
