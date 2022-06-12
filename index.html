@@ -9,43 +9,58 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
 
 <body>
     <!--Hero Section-->
-    <header class="header-p">
-        <img class="rocket-img" src="./assets/images/buzzed rocket.png" />
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum mollitia quis alias, dolorum eius harum maxime
-            voluptas quibusdam. Quos voluptate, sunt velit in totam ullam? Illum culpa nihil enim velit.</p>
+    <header class="container block">
+        <div class="cntr-content">
+            <img alt="Buzzed Rocket" class="bdr-btm" src="./assets/images/buzzed rocket.png" />
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum mollitia quis alias,
+                dolorum eius harum
+                maxime
+                voluptas quibusdam. Quos voluptate, sunt velit in totam ullam? Illum culpa nihil enim velit!
+                &#128640;</p>
+        </div>
     </header>
 
     <!--Main Container for search, pub area's and launch info-->
-    <div>
-        <div class="search container">
+    <main>
+        <div class="line-border block">
             <form class="form-design">
-                <label name="search" class="form-box">Enter City Name</label>
-                <input type="text" id="name" name="cityName" placeholder="City">
+                <p class="text-color-gold">Enter City Name</p>
+                <label name="search"></label>
+                <input type="text" id="name" name="cityName" placeholder="ex. 'Orlando'">
             </form>
         </div>
-        <div class="pub-loc">
+        <div class="block cntr-content">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5902.74827633306!2d-80.60844400444921!3d28.39525533810854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e0a7b6cff68011%3A0x559fd6cc67d2451c!2sLa%20Cantina!5e0!3m2!1sen!2sus!4v1654817887787!5m2!1sen!2sus"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                width="300" height="225" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="bdr-btm-gold container"></div>
         </div>
-        <div class="rocket">
-            <img class="img" src="./assets/images/Cape_Carnaval.png" />
+        <div class="block cntr-content">
+            <p class="text-color-gold">Nearest Space Shuttle Location</p>
+            <img class="rocket-img" src="./assets/images/Cape_Carnaval.png" alt="temp-placeholder" />
         </div>
-    </div>
+    </main>
     <footer>
-        <h2>Contact Us!</h2>
-        <a href="#"><img class="svg-img" src="./assets/images/icons8-facebook.svg" /></a>
-        <a href="#"><img class="svg-img" src="./assets/images/icons8-twitter-circled.svg" /></a>
-        <p><a href="#">buzzedrocket@gmail.com</a></p>
-        <p class="right">Buzzed Rocket 2022©</p>
+        <h2 class="is-size-4">Contact Us!</h2>
+        <div class="cntr-content">
+            <a href="#"><img class="svg-img" src="./assets/images/icons8-facebook.svg" /></a>
+            <a href="#"><img class="svg-img" src="./assets/images/icons8-twitter-circled.svg" /></a>
+        </div>
+        <div class="cntr-content">
+            <p><a href="#">buzzedrocket@gmail.com</a></p>
+            <p class="right">Buzzed Rocket 2022©</p>
+        </div>
     </footer>
 </body>
 
 </html>
+<!--Resources-->
 <!--icon's by https://icons8.com -->
 <!--cape carnival img: http://robotcosmonaut.tumblr.com/tagged/NASA/page/6 -->
+<!--bg image: https://ingallsimages.com/ -->

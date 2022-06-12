@@ -1,5 +1,6 @@
+/* Mobile first content layout */
 :root {
-    --brown: #4B372B;
+    --brown: rgb(75, 55, 43);
     --gold: #D7B668;
     --sky-blue: #9EC8Ca;
     --white: #FFFFFF;
@@ -11,6 +12,80 @@
 }
 
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto Regular", sans-serif;
     color: var(--brown);
+    background-color: var(--brown);
 }
+
+header {
+    background-color: var(--gold);
+    padding-bottom: 15%;
+    margin: 0 0 60px;
+    width: 100%;
+    border-top: var(--brown) 20px solid;
+}
+
+header img {
+    flex:0;
+    width: 230px;
+}
+
+.bdr-btm {
+    border-bottom: var(--brown) 2px solid;
+    width: 55%;
+}
+
+.cntr-content {
+    text-align: center;
+}
+
+.hdr-border {
+    border: var(--brown) 2px solid;
+    width: 50%;
+}
+
+.text-color-gold {
+    color: var(--gold);
+    text-align: center;
+}
+
+.form-design {
+    text-align: center;
+}
+
+.bdr-btm-gold{
+    border-bottom: var(--gold) 2px solid;
+    width: 55%;
+}
+
+h2 {
+    text-align: center;
+}
+
+.rocket-img {
+    width: 300px;
+    padding-bottom: 20px;
+}
+
+footer {
+    background-color: var(--gold);
+}
+
+footer a {
+    text-align: center;
+}
+
+@media screen and (min-width: 900px) { 
+    header {
+        background-image: url("Liftoff.png");
+        width: 100%;
+        padding: 0;
+    }
+    
+    body {
+        font-family: "Roboto Light", "sans-serif";
+        font-size: 32px;
+    }
+    
+}
+
