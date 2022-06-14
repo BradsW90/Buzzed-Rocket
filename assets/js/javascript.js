@@ -3,30 +3,49 @@ const apiKey =
 
 var dropDownEl = document.querySelector('.dropdown-content')
 var searchResultEl = document.querySelector('.search-results-container')
-let displayMap = (longitude, latitude) => {
+var mapContainerEl = document.querySelector('.map-container')
+var backBtnEl = document.querySelector('.back-btn')
+var searchHistoryListEl = document.querySelector('.search-history-container')
+
+arrLongLat = []
+arrPlacePointofInterest = []
+
+let displayMap = (longitude, latitude, addressText) => {
+  var listItemWrapper = document.querySelector('.list-items')
+  if (listItemWrapper !== null) {
+    listItemWrapper.remove()
+  }
+  var mapEl = document.createElement('a')
+  mapEl.id = 'map'
+  mapContainerEl.appendChild(mapEl)
+
   mapboxgl.accessToken = apiKey
   const map = new mapboxgl.Map({
     container: 'map', // container ID
     style: 'mapbox://styles/mapbox/streets-v11', // style URL
     center: [longitude, latitude], // starting position [lng, lat]
-    zoom: 5, // starting zoom
+    zoom: 15, // starting zoom
   })
-  const marker = new mapboxgl.Marker()
+  const marker = new mapboxgl.Marker({ color: '#b40219' })
     .setLngLat([longitude, latitude])
-    .setPopup(new mapboxgl.Popup().setHTML('<h1>Hello World!</h1>')) // add popup
+    .setPopup(new mapboxgl.Popup().setHTML(addressText)) // add popup
     .addTo(map)
 }
 
 var displayListByCategory = function (data) {
-  // searchResultEl.textContent = 'Some of the best restuarants are ....'
+  var listItemContainer = document.createElement('div')
+  listItemContainer.className = 'list-items'
 
   for (var i = 0; i < data.features.length; i++) {
     var nameAddress = data.features[i].place_name
-    var nameAddressEl = document.createElement('p')
+    var arrNameAddress = nameAddress.split(' ')
+    var stringNameAddress = arrNameAddress.join()
+    var nameAddressEl = document.createElement('li')
     nameAddressEl.className = 'list-address'
     nameAddressEl.textContent = nameAddress
-    searchResultEl.appendChild(nameAddressEl)
+    listItemContainer.appendChild(nameAddressEl)
   }
+  searchResultEl.appendChild(listItemContainer)
 }
 
 let displayCategoryData = (categoryName, longitude, latitude) => {
@@ -46,22 +65,67 @@ let displayCategoryData = (categoryName, longitude, latitude) => {
   })
 }
 
-var listAddressExists = function () {
-  console.log('we are here')
-  if (document.querySelector('.list-address') !== null) {
-    return true
+var searchResultHandler = function (event) {
+  var addressDetails = event.target.textContent
+  var arrAddress = addressDetails.split(' ')
+  var stringAddress = arrAddress.join()
+  var long = arrLongLat[0].long
+  var lat = arrLongLat[0].lat
+  for (const key in arrLongLat[0]) {
+    delete arrLongLat[0][key]
   }
-  return false
+
+  apiAddressUrl =
+    'https://api.mapbox.com/geocoding/v5/mapbox.places/' +
+    stringAddress +
+    '.json?limit=1&proximity=' +
+    long +
+    ',' +
+    lat +
+    '&access_token=' +
+    apiKey
+
+  fetch(apiAddressUrl).then(function (response) {
+    response.json().then(function (data) {
+      var longValue = data.features[0].center[0]
+      var latValue = data.features[0].center[1]
+      var addressValue = data.features[0].place_name
+      displayMap(longValue, latValue, addressValue)
+    })
+  })
 }
 
-let dropDownHandler = (event) => {
-  var categoryName = event.target.textContent
-  var placeName = document.querySelector('.city-name').textContent
-  console.log(document.querySelector('.list-address'))
+var saveSearch = function (placeName, categoryName) {
+  var existingEntries = JSON.parse(
+    localStorage.getItem('Place_Category') || '[]',
+  )
+  if (!existingEntries.includes(placeName)) {
+    existingEntries.unshift(placeName)
+  }
+  if (!existingEntries.includes(categoryName)) {
+    existingEntries.unshift(categoryName)
+  }
 
-  if (listAddressExists == true) {
-    console.log('true')
-    document.querySelector('.list-address').remove()
+  if (existingEntries.length > 50) {
+    existingEntries.pop()
+  }
+  localStorage.setItem('Place_Category', JSON.stringify(existingEntries))
+}
+
+var dropDownHandler = (event) => {
+  var placeName = document.querySelector('.city-place-name').value
+  var categoryName = event.target.textContent
+
+  saveSearch(placeName, categoryName)
+
+  var listItemWrapper = document.querySelector('.list-items')
+  var mapEl = document.querySelector('#map')
+
+  if (listItemWrapper !== null) {
+    listItemWrapper.remove()
+  }
+  if (mapEl !== null) {
+    mapEl.remove()
   }
 
   let apiPlaceUrl =
@@ -75,64 +139,36 @@ let dropDownHandler = (event) => {
       let longitude = data.features[0].center[0]
       let latitude = data.features[0].center[1]
       displayCategoryData(categoryName, longitude, latitude)
-      // displayMap(longitude, latitude)
+      var objLongLat = {
+        long: longitude,
+        lat: latitude,
+      }
+      arrLongLat.push(objLongLat)
     })
   })
 }
 
-// var saveCityName = function (searchCityName) {
-//   arrCityName.push(searchCityName)
-//   existingEntries = JSON.parse(localStorage.getItem('city') || '[]')
-//   var isCityInArray = checkArrForCityName(existingEntries, searchCityName)
-//   if (isCityInArray === false) {
-//     var buttonEl = document.createElement('button')
-//     buttonEl.classList = 'button is-info is-fullwidth is-hovered btn-city'
-//     buttonEl.textContent = searchCityName
-//     btnSearchAddCity.prepend(buttonEl) //adding element at the start of the container
-//     existingEntries.unshift(arrCityName) // adding array element at the start of the array
-//     localStorage.setItem('city', JSON.stringify(existingEntries))
-//   } else {
-//     arrCityName.pop()
-//   }
+var btnBackHandler = function () {
+  location.reload()
+}
 
-//   // empty the array because in case you don't refresh the page it will create new array with 2 elements
-//   arrCityName.splice(0, arrCityName.length)
-// }
+var loadSaveSearch = function () {
+  var loadPlacePointInterest = JSON.parse(
+    localStorage.getItem('Place_Category'),
+  )
+  console.log(loadPlacePointInterest)
 
-// var loadSaveCityName = function () {
-//   var loadCityName = JSON.parse(localStorage.getItem('city'))
-//   if (loadCityName != null || loadCityName != undefined) {
-//     for (var i = 0; i < loadCityName.length; i++) {
-//       var buttonEl = document.createElement('button')
-//       buttonEl.classList = 'button is-info is-fullwidth is-hovered btn-city'
-//       buttonEl.textContent = loadCityName[i][0]
-//       btnSearchAddCity.appendChild(buttonEl)
-//     }
-//   }
-// }
-
-// var btnSearchHandler = function (event) {
-//   var targetEl = event.target
-//   if (targetEl.matches('.btn-search')) {
-//     var searchInputEl = document.querySelector('.input')
-//     var searchCityName = searchInputEl.value.toLowerCase()
-
-//     if (
-//       searchCityName === '' ||
-//       searchCityName === null ||
-//       searchCityName === undefined
-//     ) {
-//       alert('Please type a city name')
-//     } else {
-//       //   saveCityName(searchCityName)
-//       getCityBreweryData(searchCityName)
-//     }
-//   } else if (targetEl.matches('.btn-city')) {
-//     searchCityName = targetEl.textContent
-//     // getCityBreweryData(searchCityName)
-//   }
-// }
-
-// // loadSaveCityName()
-// // btnSearchAddCity.addEventListener('click', btnSearchHandler)
+  if (loadPlacePointInterest !== null) {
+    for (var i = 0; i < loadPlacePointInterest.length; i++) {
+      var listEl = document.createElement('div')
+      listEl.className = 'search-item'
+      listEl.textContent = loadPlacePointInterest[i]
+      // listEl.textContent = loadPlacePointInterest[i][i].category
+      searchHistoryListEl.prepend(listEl)
+    }
+  }
+}
+loadSaveSearch()
+backBtnEl.addEventListener('click', btnBackHandler)
+searchResultEl.addEventListener('click', searchResultHandler)
 dropDownEl.addEventListener('click', dropDownHandler)
