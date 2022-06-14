@@ -1,23 +1,36 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>BUZZED ROCKET</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buzzed Rocket</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
     <link
       href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+
+
+<body>
+    <!--Hero Section-->
+    <header class="block">
+        <div class="cntr-content">
+            <img alt="Buzzed Rocket" class="alt-size" src="./assets/images/buzzed rocket.png" />
+            <div class="bdr-btm"></div>
+            <div class="translucent-bg">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum mollitia quis alias,
+                    dolorum eius harum
+                    maxime
+                    voluptas quibusdam. Quos voluptate, sunt velit in totam ullam? Illum culpa nihil enim velit!
+                    &#128640;</p>
+            </div>
+        </div>
+
   </head>
   <body>
 
@@ -28,8 +41,13 @@
 
     <header id="header-container">
       BUZZED ROCKET
+
     </header>
+
+    <!--Main Container for search, pub area's and launch info-->
     <main>
+        <div class="line-border block">
+            <!--search bar goes here-->
       <div class="city-name">Cape Canaveral</div>
       <div class="dropdown is-hoverable">
         <div class="dropdown-trigger">
@@ -74,12 +92,38 @@
           </div>
         </div>
       </div>
-
-      <div id="map"></div>
-      <div class="search-results-container"></div>
+            <div class="bdr-btm-gold container"></div>
+        </div>
+        <div class="alt-content">            
+          <div class="block cntr-content" id="">
+            <div id="map"></div>
+            <div class="search-results-container"></div>
+          </div>
+            <div class="block cntr-content" id="">
+            </div>
+            <!--content for shuttle launch here-->
+            <div class="block cntr-content" id="">
+            </div>
+        </div>
     </main>
+    <footer>
+        <h2 class="is-size-4-mobile">Contact Us!</h2>
+        <div class="cntr-content">
+            <a href="#"><img class="svg-img" src="./assets/images/icons8-facebook.svg" /></a>
+            <a href="#"><img class="svg-img" src="./assets/images/icons8-twitter-circled.svg" /></a>
+        </div>
+        <div class="cntr-content">
+            <p><a href="#">buzzedrocket@gmail.com</a></p>
+            <p class="right">Buzzed Rocket 2022©</p>
+        </div>
+    </footer>
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
 
     <script src="./assets/js/javascript.js"></script>
-  </body>
+</body>
 </html>
+<!--Resources-->
+<!--icon's by https://icons8.com -->
+<!--cape carnival img: http://robotcosmonaut.tumblr.com/tagged/NASA/page/6 -->
+<!--bg image: https://ingallsimages.com/ -->
+<!--header bg image: https://shutterstock.com/ -->
