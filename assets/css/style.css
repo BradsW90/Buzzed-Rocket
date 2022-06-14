@@ -152,6 +152,11 @@ h2 {
 .flight-color {
   color: var(--flight-color);
 }
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}
 .dropdown-item:hover,
 .dropdown-item:focus {
   background-color: #9ec8ca !important;
