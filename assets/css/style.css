@@ -1,3 +1,4 @@
+
 /* main setup for styling and color variables*/
 * {
   margin: 0;
@@ -72,4 +73,27 @@
 
 .flight-color {
   color: var(--flight-color);
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: #9ec8ca !important;
+}
+.button {
+  margin: 30px 30px 0 30px;
+}
+.dropdown-menu {
+  margin-left: 30px;
+}
+#map {
+  position: absolute;
+  top: 80px;
+  left: 300px;
+  width: 40%;
+  height: 40%;
+}
+
+.search-results-container {
+  margin-left: 30px;
+  padding-top: 10px;
+
 }
