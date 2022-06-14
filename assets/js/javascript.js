@@ -128,6 +128,7 @@ let launch = () => {
   })
 }
 
+launch()
 /*var countDown = (launchTime, statusAbbrev, i) => {
   var launchTimeEle = document.getElementsByClassName("launch-time");
 
@@ -370,7 +371,7 @@ var loadSaveSearch = function () {
     }
   }
 }
-launch()
+
 loadSaveSearch()
 backBtnEl.addEventListener('click', btnBackHandler)
 searchResultEl.addEventListener('click', searchResultHandler)
