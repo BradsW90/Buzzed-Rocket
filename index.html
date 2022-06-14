@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buzzed Rocket</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
     <link
       href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css"
       rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-
-
-<body>
-    <!--Hero Section-->
-    <header class="block">
+  </head>
+  <body>
+    <main>
+      <header class="block">
         <div class="cntr-content">
             <img alt="Buzzed Rocket" class="alt-size" src="./assets/images/buzzed rocket.png" />
             <div class="bdr-btm"></div>
@@ -30,124 +32,96 @@
                     &#128640;</p>
             </div>
         </div>
-
-  </head>
-  <body>
-
-    <header id="header-container">BUZZED ROCKET</header>
-    <main>
-      <div class="rocket-display"></div>
-    </main>
-
-    <header id="header-container">
-      BUZZED ROCKET
-
-    </header>
-    <main class="main-container">
-      <button class="button back-btn">
-        <span class="icon is-small">
-          <img src="./assets/images/icons8-refresh-64.png" />
-        </span>
-        <span>RESET</span>
-      </button>
-      <div class="field">
-        <label class="label">Enter City or Place</label>
-        <div class="control">
-          <input
+      </header>
+      <div>
+        <div class="rocket-display"></div>
+        <div class="main-container">
+        <button class="button back-btn">
+          <span class="icon is-small">
+            <img src="./assets/images/icons8-refresh-64.png" />
+          </span>
+          <span>RESET</span>
+        </button>
+        <div class="field">
+          <label class="label">Enter City or Place</label>
+          <div class="control">
+            <input
             class="input city-place-name"
             type="text"
             placeholder="City OR Place"
-          />
-
-    <!--Main Container for search, pub area's and launch info-->
-    <main>
-        <div class="line-border block">
-            <!--search bar goes here-->
-      <div class="city-name">Cape Canaveral</div>
-      <div class="dropdown is-hoverable">
-        <div class="dropdown-trigger">
-          <button
-            class="button"
-            aria-haspopup="true"
-            aria-controls="dropdown-menu3"
-          >
-            <span class="icon is-small">
-              <i class="fa fa-bars"></i>
-            </span>
-            <span>I'm looking for nearby.....</span>
-          </button>
+            />
+          </div>
         </div>
-      </div>
-      <div class="search-wrapper">
-        <div class="search-container">
-          <div class="dropdown is-hoverable">
-            <div class="dropdown-trigger" id="dropdown-trigger">
-              <button
-                class="button"
-                aria-haspopup="true"
-                aria-controls="dropdown-menu3"
-              >
-                <span class="icon is-small">
-                  <i class="fa fa-bars"></i>
-                </span>
-                <span>Point of Interest</span>
-              </button>
-            </div>
-            <div class="dropdown-menu" id="dropdown-menu3" role="menu">
-              <div
-                class="dropdown-content dropdown-item-hover-background-color"
-              >
-                <a href="#" class="dropdown-item" data-val="restuarant">
-                  Restuarant
-                </a>
-                <a href="#" class="dropdown-item" data-val="Bar">
-                  Bar
-                </a>
-                <a href="#" class="dropdown-item" data-val="Brewery">
-                  Brewery
-                </a>
-                <a href="#" class="dropdown-item" data-val="Pub">
-                  Pub
-                </a>
-                <a href="#" class="dropdown-item" data-val="Park">
-                  Park
-                </a>
-                <a href="#" class="dropdown-item" data-val="Spa">
-                  Spa
-                </a>
-                <a href="#" class="dropdown-item" data-val="Hotel">
-                  Hotel
-                </a>
-                <!-- <hr class="dropdown-divider" />
-                  <a href="#" class="dropdown-item" data-val="More">
-                    More
-                  </a> -->
+        <div class="search-wrapper">
+          <div class="search-container">
+            <div class="dropdown is-hoverable">
+              <div class="dropdown-trigger" id="dropdown-trigger">
+                <button
+                  class="button"
+                  aria-haspopup="true"
+                  aria-controls="dropdown-menu3"
+                >
+                  <span class="icon is-small">
+                    <i class="fa fa-bars"></i>
+                  </span>
+                  <span>Point of Interest</span>
+                </button>
+              </div>
+              <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+                <div
+                  class="dropdown-content dropdown-item-hover-background-color"
+                >
+                  <a href="#" class="dropdown-item" data-val="restuarant">
+                    Restuarant
+                  </a>
+                  <a href="#" class="dropdown-item" data-val="Bar">
+                    Bar
+                  </a>
+                  <a href="#" class="dropdown-item" data-val="Brewery">
+                    Brewery
+                  </a>
+                  <a href="#" class="dropdown-item" data-val="Pub">
+                    Pub
+                  </a>
+                  <a href="#" class="dropdown-item" data-val="Park">
+                    Park
+                  </a>
+                  <a href="#" class="dropdown-item" data-val="Spa">
+                    Spa
+                  </a>
+                  <a href="#" class="dropdown-item" data-val="Hotel">
+                    Hotel
+                  </a>
+                  <!-- <hr class="dropdown-divider" />
+                    <a href="#" class="dropdown-item" data-val="More">
+                      More
+                    </a> -->
+                </div>
               </div>
             </div>
+            <ul class="search-results-container"></ul>
           </div>
-          <ul class="search-results-container"></ul>
+          <div class="map-container"></div>
+          <div class="block">
+            <label class="search-history-label">
+              Your Search History
+            </label>
+            <div class="search-history-container"></div>
+          </div>
         </div>
-        <div class="map-container"></div>
-        <div class="block">
-          <label class="search-history-label">
-            <strong>Your Search History</strong>
-          </label>
-          <div class="search-history-container"></div>
-        </div>
-      </div>
-            <div class="bdr-btm-gold container"></div>
-        </div>
-        <div class="alt-content">            
+        <div class="bdr-btm-gold container">
+          <div class="alt-content">            
           <div class="block cntr-content" id="">
             <div id="map"></div>
             <div class="search-results-container"></div>
           </div>
-            <div class="block cntr-content" id="">
-            </div>
+          <div class="block cntr-content" id="">
+          </div>
             <!--content for shuttle launch here-->
-            <div class="block cntr-content" id="">
-            </div>
+          <div class="block cntr-content" id="">
+          </div>
         </div>
+      </div>  
     </main>
     <footer>
         <h2 class="is-size-4-mobile">Contact Us!</h2>
@@ -166,7 +140,7 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrsurw828SkVRQ_yWxYG9W1t8LoxNqmik&callback=initMap"
     ></script> -->
     <script src="./assets/js/javascript.js"></script>
-</body>
+  </body>
 </html>
 <!--Resources-->
 <!--icon's by https://icons8.com -->
