@@ -4,79 +4,78 @@
 
 /* Mobile first content layout */
 :root {
-    --brown: rgb(75, 55, 43);
-    --gold: #D7B668;
-    --sky-blue: #9EC8Ca;
-    --white: #FFFFFF;
+  --brown: rgb(75, 55, 43);
+  --gold: #d7b668;
+  --sky-blue: #9ec8ca;
+  --white: #ffffff;
 }
 
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    font-family: "Roboto Regular", sans-serif;
-    color: var(--brown);
-    background-color: var(--brown);
+  font-family: 'Roboto Regular', sans-serif;
+  color: var(--brown);
+  background-color: var(--brown);
 }
 
 header {
-    background-color: var(--gold);
-    padding-bottom: 15%;
-    margin: 0 0 60px;
-    width: 100%;
-    border-top: var(--brown) 20px solid;
+  background-color: var(--gold);
+  padding-bottom: 15%;
+  margin: 0 0 60px;
+  width: 100%;
+  border-top: var(--brown) 20px solid;
 }
 
 header img {
-    flex: 0;
-    width: 230px;
+  flex: 0;
+  width: 230px;
 }
 
 .bdr-btm {
-    border-bottom: var(--brown) 2px solid;
-    width: 47%;
-    margin: 0 auto 175px auto;
+  border-bottom: var(--brown) 2px solid;
+  width: 47%;
+  margin: 0 auto 175px auto;
 }
 
 .cntr-content {
-    text-align: center;
+  text-align: center;
 }
 
 .hdr-border {
-    border: var(--brown) 2px solid;
-    width: 50%;
+  border: var(--brown) 2px solid;
+  width: 50%;
 }
 
 .text-color-gold {
-    color: var(--gold);
-    text-align: center;
+  color: var(--gold);
+  text-align: center;
 }
 
 .form-design {
-    text-align: center;
+  text-align: center;
 }
 
 .city-search {
-    margin: 0 auto 30px auto;
-    border-radius: 5px;
+  margin: 0 auto 30px auto;
+  border-radius: 5px;
 }
 
 .bdr-btm-gold {
-    border-bottom: var(--gold) 2px solid;
-    width: 55%;
+  border-bottom: var(--gold) 2px solid;
+  width: 55%;
 }
 
 h2 {
-    text-align: center;
+  text-align: center;
 }
 
 .rocket-img {
-    width: 300px;
-    padding-bottom: 20px;
+  width: 300px;
+  padding-bottom: 20px;
 }
-
 
 /* main setup for styling and color variables*/
 * {
@@ -270,58 +269,65 @@ h2 {
 } */
 
 footer {
-    background-color: var(--gold);
+  background-color: var(--gold);
 }
 
 footer a {
-    text-align: center;
+  text-align: center;
 }
 
 @media screen and (min-width: 900px) {
+  /* for desktop display */
+  body {
+    font-family: 'Roboto Light', 'sans-serif';
+    font-size: 32px;
+    color: var(--gold);
+  }
 
-    /* for desktop display */
-    body {
-        font-family: "Roboto Light", "sans-serif";
-        font-size: 32px;
-        color: var(--gold);
-    }
+  header {
+    background-image: url('Liftoff.jpg');
+    background-position: 45% 40%;
+    background-size: 220%;
+    display: block;
+    margin: 0;
+    padding: 0 0 150px;
+    border-bottom: var(--brown) 40px solid;
+  }
 
-    header {
-        background-image: url("Liftoff.jpg");
-        background-position: 45% 40%;
-        background-size: 220%;
-        display: block;
-        margin: 0;
-        padding: 0 0 150px;
-        border-bottom: var(--brown) 40px solid;
-    }
+  .alt-size {
+    display: block;
+    padding: auto;
+    margin: 0 auto 150px auto;
+    width: 170px;
+    height: 170px;
+  }
 
-    .alt-size {
-        display: block;
-        padding: auto;
-        margin: 0 auto 150px auto;
-        width: 170px;
-        height: 170px;
-    }
+  header p {
+    margin: 0 300px 0 300px;
+  }
 
-    header p {
-        margin: 0 300px 0 300px;
-    }
+  .bdr-btm {
+    border-bottom: var(--white) 3.5px solid;
+  }
 
-    .bdr-btm {
-        border-bottom: var(--white) 3.5px solid;
-    }
+  .translucent-bg {
+    background-color: rgba(75, 55, 43, 0.5);
+  }
 
-    .translucent-bg {
-        background-color: rgba(75, 55, 43, .5);
-    }
+  .city-search {
+    width: 15%;
+    font-size: 20px;
+    color: var(--brown);
+    margin: 0 auto 73px auto;
+  }
 
-    .city-search {
-        width: 15%;
-        font-size: 20px;
-        color: var(--brown);
-        margin: 0 auto 73px auto
-    }
+  .alt-content {
+    display: flex;
+    flex: wrap;
+    flex-wrap: wrap;
+    padding: 0;
+    justify-content: space-around;
+  }
 
     .alt-content {
         display: flex;
@@ -334,10 +340,11 @@ footer a {
         margin: 42px 0 0 0;
     }
 
-    .rocket-img {
-        width: 100%;
-        height: 600px
-    }
+  .alt-content iframe {
+    width: 600px;
+    height: 600px;
+    margin: 42px 0 0 0;
+  }
 
     .bdr-btm-gold {
         margin: 0 auto 0 auto;
