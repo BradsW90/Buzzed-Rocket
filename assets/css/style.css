@@ -96,7 +96,6 @@ h2 {
   flex-wrap: wrap;
   font-size: small;
   color: white;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* sets up cards to be flex to apporpiately size img*/
@@ -152,6 +151,9 @@ h2 {
 .flight-color {
   color: var(--flight-color);
 }
+.error-message {
+  color: red;
+}
 .dropdown-item:hover,
 .dropdown-item:focus {
   background-color: #9ec8ca !important;
@@ -182,7 +184,6 @@ h2 {
   padding-top: 10px;
   line-height: 2;
   font-size: small;
-  color: #ffffff;
 }
 
 .list-address:hover,
@@ -193,6 +194,7 @@ h2 {
   /* text-decoration: underline; */
   cursor: pointer;
 }
+
 /* .search-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -207,11 +209,11 @@ h2 {
 }
 
 .main-container {
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0;
+  margin-right: 0;
   border: 3px solid #4b372b;
   width: 45vw;
-  height: 100vh;
+  height: 90vh;
   border-radius: 10px;
 }
 
@@ -225,6 +227,7 @@ h2 {
   flex-wrap: wrap;
   justify-content: space-between;
 } */
+
 .search-item {
   width: 90px;
   height: 90px;
@@ -242,23 +245,30 @@ h2 {
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
-  /* background-color: #4b372b; */
+  background-color: #4b372b;
   box-shadow: 5px;
   margin-top: 10px;
   border-top: 2px solid grey;
-  font-size: small;
-}
-.block {
-  /* border: 1px solid #4b372b; */
-  margin: 350px 5px 5px 5px;
-  /* border-top: 1px solid rgb(183, 180, 180); */
-  /* color: #4b372b; */
-  color: var(--brown);
 }
 
-.search-history-label {
-  color: white !important;
+.block-search {
+  border: 1px solid #4b372b;
+  margin: 350px 5px 5px 5px;
+  border-top: 1px solid rgb(183, 180, 180);
+  color: #4b372b;
 }
+
+.search-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+/* .search-wrap-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+} */
 
 footer {
   background-color: var(--gold);
@@ -321,9 +331,15 @@ footer a {
     justify-content: space-around;
   }
 
-  .rocket-img {
-    width: 100%;
+  .alt-content {
+    display: flex;
+    flex: wrap;
+    flex-wrap: wrap;
+    padding: 0;
+    justify-content: space-around;
+    width: 600px;
     height: 600px;
+    margin: 42px 0 0 0;
   }
 
   .alt-content iframe {
@@ -346,5 +362,19 @@ footer a {
   footer h2 {
     font-size: 36px;
     font-family: 'Roboto Medium', 'sans-serif';
+  }
+
+  .rocket-display {
+    display: flex;
+    flex: 2;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: small;
+    color: white;
+  }
+
+  .mapboxgl-canvas-container {
+    height: 50vh;
   }
 }
