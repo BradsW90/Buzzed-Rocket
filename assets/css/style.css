@@ -16,7 +16,7 @@
 }
 
 body {
-  font-family: 'Roboto Regular', sans-serif;
+  font-family: "Roboto Regular", sans-serif;
   color: var(--brown);
   background-color: var(--brown);
 }
@@ -101,11 +101,7 @@ h2 {
 /* sets up main container to be flex*/
 .rocket-display {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  font-size: small;
-  color: white;
+  justify-content: center;
 }
 
 /* sets up cards to be flex to apporpiately size img*/
@@ -115,7 +111,7 @@ h2 {
   background-image: linear-gradient(rgb(0, 0, 0), rgb(50, 50, 175));
   margin: 15px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -161,9 +157,7 @@ h2 {
 .flight-color {
   color: var(--flight-color);
 }
-.error-message {
-  color: red;
-}
+
 .dropdown-item:hover,
 .dropdown-item:focus {
   background-color: #9ec8ca !important;
@@ -203,18 +197,6 @@ h2 {
   font-weight: bolder;
   /* text-decoration: underline; */
   cursor: pointer;
-}
-
-.list-items {
-  background: #ffffff;
-  width: fit-content;
-  height: fit-content;
-  border-radius: 10px;
-  font-weight: bold;
-  color: black;
-  line-height: 1.6;
-  text-decoration: underline;
-}
 
 /* .search-wrapper {
   display: flex;
@@ -302,13 +284,13 @@ footer a {
 @media screen and (min-width: 900px) {
   /* for desktop display */
   body {
-    font-family: 'Roboto Light', 'sans-serif';
+    font-family: "Roboto Light", "sans-serif";
     font-size: 32px;
     color: var(--gold);
   }
 
   header {
-    background-image: url('Liftoff.jpg');
+    background-image: url("Liftoff.jpg");
     background-position: 45% 40%;
     background-size: 220%;
     display: block;
@@ -382,20 +364,27 @@ footer a {
 
   footer h2 {
     font-size: 36px;
-    font-family: 'Roboto Medium', 'sans-serif';
+    font-family: "Roboto Medium", "sans-serif";
   }
 
   .rocket-display {
     display: flex;
     flex: 2;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     font-size: small;
     color: white;
   }
+  .rocket-display button {
+    font-size: 22px;
+    padding: 4px 2px 7px 2px;
+    text-align: center;
+  }
 
-  .mapboxgl-canvas-container {
-    height: 50vh;
+  .rocket-display button:hover {
+    background-image: linear-gradient(to top, rgb(100, 100, 220), rgb(0, 0, 0));
+    color: white;
+    transition: background-image 2s;
   }
 }
