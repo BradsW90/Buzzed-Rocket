@@ -183,6 +183,13 @@ h2 {
   height: 100%;
 }
 
+.search-history-label {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  font-size: larger;
+  color: #9ec8ca;
+}
+
 .search-results-container {
   margin-left: 30px;
   padding-top: 10px;
@@ -252,11 +259,12 @@ h2 {
   box-shadow: 5px;
   margin-top: 10px;
   border-top: 2px solid grey;
+  position: relative;
 }
 
 .block-search {
   border: 1px solid #4b372b;
-  margin: 350px 5px 5px 5px;
+  margin: 200px 5px 5px 5px;
   border-top: 1px solid rgb(183, 180, 180);
   color: #4b372b;
 }
