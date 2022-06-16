@@ -128,6 +128,7 @@ let launch = () => {
   })
 }
 
+launch()
 /*var countDown = (launchTime, statusAbbrev, i) => {
   var launchTimeEle = document.getElementsByClassName("launch-time");
 
@@ -228,6 +229,7 @@ let displayMap = (longitude, latitude, addressText) => {
     center: [longitude, latitude], // starting position [lng, lat]
     zoom: 15, // starting zoom
   })
+  map.addControl(new mapboxgl.NavigationControl())
   const marker = new mapboxgl.Marker({ color: '#b40219' })
     .setLngLat([longitude, latitude])
     .setPopup(new mapboxgl.Popup().setHTML(addressText)) // add popup
@@ -301,6 +303,7 @@ var saveSearch = function (placeName, categoryName) {
   var existingEntries = JSON.parse(
     localStorage.getItem('Place_Category') || '[]',
   )
+
   if (!existingEntries.includes(placeName)) {
     existingEntries.unshift(placeName)
   }
@@ -317,37 +320,44 @@ var saveSearch = function (placeName, categoryName) {
 var dropDownHandler = (event) => {
   var placeName = document.querySelector('.city-place-name').value
   var categoryName = event.target.textContent
+  debugger
+  if (placeName === null || placeName === '' || placeName === undefined) {
+    var errorMessgaeEl = document.querySelector('.error-message')
+    errorMessgaeEl.textContent =
+      'ERROR : Please provide city/place name in the text box.' +
+      'Remove error message by clicking reset button'
+  } else {
+    saveSearch(placeName, categoryName)
 
-  saveSearch(placeName, categoryName)
+    var listItemWrapper = document.querySelector('.list-items')
+    var mapEl = document.querySelector('#map')
 
-  var listItemWrapper = document.querySelector('.list-items')
-  var mapEl = document.querySelector('#map')
+    if (listItemWrapper !== null) {
+      listItemWrapper.remove()
+    }
+    if (mapEl !== null) {
+      mapEl.remove()
+    }
 
-  if (listItemWrapper !== null) {
-    listItemWrapper.remove()
-  }
-  if (mapEl !== null) {
-    mapEl.remove()
-  }
+    let apiPlaceUrl =
+      'https://api.mapbox.com/geocoding/v5/mapbox.places/' +
+      placeName +
+      '.json?limit=1&access_token=' +
+      apiKey
 
-  let apiPlaceUrl =
-    'https://api.mapbox.com/geocoding/v5/mapbox.places/' +
-    placeName +
-    '.json?limit=1&access_token=' +
-    apiKey
-
-  fetch(apiPlaceUrl).then(function (response) {
-    response.json().then(function (data) {
-      let longitude = data.features[0].center[0]
-      let latitude = data.features[0].center[1]
-      displayCategoryData(categoryName, longitude, latitude)
-      var objLongLat = {
-        long: longitude,
-        lat: latitude,
-      }
-      arrLongLat.push(objLongLat)
+    fetch(apiPlaceUrl).then(function (response) {
+      response.json().then(function (data) {
+        let longitude = data.features[0].center[0]
+        let latitude = data.features[0].center[1]
+        displayCategoryData(categoryName, longitude, latitude)
+        var objLongLat = {
+          long: longitude,
+          lat: latitude,
+        }
+        arrLongLat.push(objLongLat)
+      })
     })
-  })
+  }
 }
 
 var btnBackHandler = function () {
@@ -358,19 +368,17 @@ var loadSaveSearch = function () {
   var loadPlacePointInterest = JSON.parse(
     localStorage.getItem('Place_Category'),
   )
-  console.log(loadPlacePointInterest)
 
   if (loadPlacePointInterest !== null) {
     for (var i = 0; i < loadPlacePointInterest.length; i++) {
       var listEl = document.createElement('div')
       listEl.className = 'search-item'
       listEl.textContent = loadPlacePointInterest[i]
-      // listEl.textContent = loadPlacePointInterest[i][i].category
       searchHistoryListEl.prepend(listEl)
     }
   }
 }
-launch()
+
 loadSaveSearch()
 backBtnEl.addEventListener('click', btnBackHandler)
 searchResultEl.addEventListener('click', searchResultHandler)

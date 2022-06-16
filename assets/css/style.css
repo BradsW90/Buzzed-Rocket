@@ -79,118 +79,120 @@ h2 {
 
 /* main setup for styling and color variables*/
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    --good-color: rgb(225, 225, 100);
-    --bad-color: rgb(225, 100, 100);
-    --no-color: rgb(150, 150, 150);
-    --flight-color: rgb(100, 225, 100);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --good-color: rgb(225, 225, 100);
+  --bad-color: rgb(225, 100, 100);
+  --no-color: rgb(150, 150, 150);
+  --flight-color: rgb(100, 225, 100);
 }
 
 /* sets up main container to be flex*/
 .rocket-display {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    font-size: small;
-    color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: small;
+  color: white;
 }
 
 /* sets up cards to be flex to apporpiately size img*/
 .rocket-card {
-    height: 350px;
-    width: 200px;
-    background-image: linear-gradient(rgb(0, 0, 0), rgb(50, 50, 175));
-    margin: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+  height: 350px;
+  width: 200px;
+  background-image: linear-gradient(rgb(0, 0, 0), rgb(50, 50, 175));
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .rocket-name {
-    text-align: center;
-    font-size: 22px;
+  text-align: center;
+  font-size: 22px;
 }
 
 .rocket-card img {
-    flex: 1 100%;
-    height: 100px;
-    width: 100px;
-    margin: 0 10px;
+  flex: 1 100%;
+  height: 100px;
+  width: 100px;
+  margin: 0 10px;
 }
 
 .rocket-card h3 {
-    text-align: center;
+  text-align: center;
 }
 
 .wrapper span {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 /* sets element to be on same line as span*/
 .wrapper p {
-    display: inline;
+  display: inline;
 }
 
 /* the four styles below are for launch status*/
 .good-color {
-    color: var(--good-color);
+  color: var(--good-color);
 }
 
 .bad-color {
-    color: var(--bad-color);
+  color: var(--bad-color);
 }
 
 .no-color {
-    color: var(--no-color);
+  color: var(--no-color);
 }
 
 .flight-color {
-    color: var(--flight-color);
+  color: var(--flight-color);
 }
-
+.error-message {
+  color: red;
+}
 .dropdown-item:hover,
 .dropdown-item:focus {
-    background-color: #9ec8ca !important;
+  background-color: #9ec8ca !important;
 }
 
 .button {
-    margin-left: 30px;
-    margin-right: 10%;
-    margin-top: 10px;
-    margin-bottom: 10px;
+  margin-left: 30px;
+  margin-right: 10%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .dropdown-menu {
-    margin: 0 30px 0 30px;
+  margin: 0 30px 0 30px;
 }
 
 #map {
-    position: relative;
-    margin-top: 200px;
-    margin-left: 30px;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+  position: relative;
+  margin-top: 200px;
+  margin-left: 30px;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .search-results-container {
-    margin-left: 30px;
-    padding-top: 10px;
-    line-height: 2;
-    font-size: small;
+  margin-left: 30px;
+  padding-top: 10px;
+  line-height: 2;
+  font-size: small;
 }
 
 .list-address:hover,
 .list-address:focus {
-    background-color: #9ec8ca !important;
-    /* color: blue; */
-    font-weight: bolder;
-    /* text-decoration: underline; */
-    cursor: pointer;
+  background-color: #9ec8ca !important;
+  /* color: blue; */
+  font-weight: bolder;
+  /* text-decoration: underline; */
+  cursor: pointer;
 }
 
 /* .search-wrapper {
@@ -200,24 +202,24 @@ h2 {
 } */
 
 .back-btn {
-    background-color: #9ec8ca;
-    border-radius: 10px;
-    font-weight: bold;
-    margin-left: 80%;
+  background-color: #9ec8ca;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-left: 80%;
 }
 
 .main-container {
-    margin-left: 0;
-    margin-right: 0;
-    border: 3px solid #4b372b;
-    width: 45vw;
-    height: 90vh;
-    border-radius: 10px;
+  margin-left: 0;
+  margin-right: 0;
+  border: 3px solid #4b372b;
+  width: 45vw;
+  height: 90vh;
+  border-radius: 10px;
 }
 
 .field {
-    margin-left: 30px;
-    margin-right: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 /* .search-history-container {
@@ -227,26 +229,26 @@ h2 {
 } */
 
 .search-item {
-    width: 90px;
-    height: 90px;
-    text-align: center;
-    padding-top: 35px;
-    margin: 5px;
-    background-color: #ffff;
-    display: inline-block;
-    font-weight: bold;
-    border: #d7b668;
-    border-radius: 7px;
+  width: 90px;
+  height: 90px;
+  text-align: center;
+  padding-top: 35px;
+  margin: 5px;
+  background-color: #ffff;
+  display: inline-block;
+  font-weight: bold;
+  border: #d7b668;
+  border-radius: 7px;
 }
 
 .search-history-container {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    background-color: #4b372b;
-    box-shadow: 5px;
-    margin-top: 10px;
-    border-top: 2px solid grey;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  background-color: #4b372b;
+  box-shadow: 5px;
+  margin-top: 10px;
+  border-top: 2px solid grey;
 }
 
 .block-search {
@@ -257,9 +259,9 @@ h2 {
 }
 
 .search-wrap {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 /* .search-wrap-right {
@@ -329,16 +331,16 @@ footer a {
     justify-content: space-around;
   }
 
-    .alt-content {
-        display: flex;
-        flex: wrap;
-        flex-wrap: wrap;
-        padding: 0;
-        justify-content: space-around;
-        width: 600px;
-        height: 600px;
-        margin: 42px 0 0 0;
-    }
+  .alt-content {
+    display: flex;
+    flex: wrap;
+    flex-wrap: wrap;
+    padding: 0;
+    justify-content: space-around;
+    width: 600px;
+    height: 600px;
+    margin: 42px 0 0 0;
+  }
 
   .alt-content iframe {
     width: 600px;
@@ -346,30 +348,33 @@ footer a {
     margin: 42px 0 0 0;
   }
 
-    .bdr-btm-gold {
-        margin: 0 auto 0 auto;
-        text-align: center;
-        border-bottom: solid 3px;
-    }
+  .bdr-btm-gold {
+    margin: 0 auto 0 auto;
+    text-align: center;
+    border-bottom: solid 3px;
+  }
 
-    footer {
-        color: var(--brown);
-        font-size: 22px;
-    }
+  footer {
+    color: var(--brown);
+    font-size: 22px;
+  }
 
-    footer h2 {
-        font-size: 36px;
-        font-family: "Roboto Medium", "sans-serif";
-    }
+  footer h2 {
+    font-size: 36px;
+    font-family: 'Roboto Medium', 'sans-serif';
+  }
 
-    .rocket-display {
-        display: flex;
-        flex: 2;
-        justify-content: space-around;
-        align-items: center;
-        flex-wrap: wrap;
-        font-size: small;
-        color: white;
-    }
-    
+  .rocket-display {
+    display: flex;
+    flex: 2;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: small;
+    color: white;
+  }
+
+  .mapboxgl-canvas-container {
+    height: 50vh;
+  }
 }
