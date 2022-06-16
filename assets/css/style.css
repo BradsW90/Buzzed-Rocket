@@ -40,8 +40,18 @@ header img {
   margin: 0 auto 175px auto;
 }
 
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 .cntr-content {
   text-align: center;
+  font-weight: bolder;
+  font-size: 50px;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  animation: fadeIn 5s
 }
 
 .hdr-border {
@@ -92,10 +102,6 @@ h2 {
 .rocket-display {
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  font-size: small;
-  color: white;
 }
 
 /* sets up cards to be flex to apporpiately size img*/
@@ -191,7 +197,6 @@ h2 {
   font-weight: bolder;
   /* text-decoration: underline; */
   cursor: pointer;
-}
 
 /* .search-wrapper {
   display: flex;
@@ -371,7 +376,6 @@ footer a {
     font-size: small;
     color: white;
   }
-
   .rocket-display button {
     font-size: 22px;
     padding: 4px 2px 7px 2px;

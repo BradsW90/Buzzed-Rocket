@@ -214,6 +214,7 @@ let launch = () => {
   });
 };
 
+launch()
 /*var countDown = (launchTime, statusAbbrev, i) => {
   var launchTimeEle = document.getElementsByClassName("launch-time");
 
