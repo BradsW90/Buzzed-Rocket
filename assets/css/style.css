@@ -40,8 +40,18 @@ header img {
   margin: 0 auto 175px auto;
 }
 
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 .cntr-content {
   text-align: center;
+  font-weight: bolder;
+  font-size: 50px;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  animation: fadeIn 5s
 }
 
 .hdr-border {
@@ -193,6 +203,17 @@ h2 {
   font-weight: bolder;
   /* text-decoration: underline; */
   cursor: pointer;
+}
+
+.list-items {
+  background: #ffffff;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 10px;
+  font-weight: bold;
+  color: black;
+  line-height: 1.6;
+  text-decoration: underline;
 }
 
 /* .search-wrapper {
