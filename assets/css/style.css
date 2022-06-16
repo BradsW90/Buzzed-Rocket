@@ -16,7 +16,7 @@
 }
 
 body {
-  font-family: "Roboto Regular", sans-serif;
+  font-family: 'Roboto Regular', sans-serif;
   color: var(--brown);
   background-color: var(--brown);
 }
@@ -41,8 +41,12 @@ header img {
 }
 
 @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .cntr-content {
@@ -51,7 +55,7 @@ header img {
   font-size: 50px;
   color: black;
   font-family: 'Times New Roman', Times, serif;
-  animation: fadeIn 5s
+  animation: fadeIn 5s;
 }
 
 .hdr-border {
@@ -204,7 +208,7 @@ h2 {
   font-weight: bolder;
   /* text-decoration: underline; */
   cursor: pointer;
-
+}
 /* .search-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -288,17 +292,20 @@ footer {
 footer a {
   text-align: center;
 }
+.mapboxgl-canvas-container {
+  height: 30vh;
+}
 
 @media screen and (min-width: 900px) {
   /* for desktop display */
   body {
-    font-family: "Roboto Light", "sans-serif";
+    font-family: 'Roboto Light', 'sans-serif';
     font-size: 32px;
     color: var(--gold);
   }
 
   header {
-    background-image: url("Liftoff.jpg");
+    background-image: url('Liftoff.jpg');
     background-position: 45% 40%;
     background-size: 220%;
     display: block;
@@ -372,7 +379,7 @@ footer a {
 
   footer h2 {
     font-size: 36px;
-    font-family: "Roboto Medium", "sans-serif";
+    font-family: 'Roboto Medium', 'sans-serif';
   }
 
   .rocket-display {
