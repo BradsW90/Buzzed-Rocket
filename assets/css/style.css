@@ -16,7 +16,7 @@
 }
 
 body {
-  font-family: 'Roboto Regular', sans-serif;
+  font-family: "Roboto Regular", sans-serif;
   color: var(--brown);
   background-color: var(--brown);
 }
@@ -54,7 +54,7 @@ header img {
   font-weight: bolder;
   font-size: 50px;
   color: black;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   animation: fadeIn 5s;
 }
 
@@ -106,6 +106,8 @@ h2 {
 .rocket-display {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 /* sets up cards to be flex to apporpiately size img*/
@@ -188,7 +190,7 @@ h2 {
 }
 
 .search-history-label {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   font-weight: bolder;
   font-size: larger;
   color: #9ec8ca;
@@ -225,7 +227,7 @@ h2 {
 .main-container {
   margin-left: 0;
   margin-right: 0;
-  border: 3px solid #4b372b;
+  border: 3px solid white;
   width: 45vw;
   height: 90vh;
   border-radius: 10px;
@@ -299,13 +301,13 @@ footer a {
 @media screen and (min-width: 900px) {
   /* for desktop display */
   body {
-    font-family: 'Roboto Light', 'sans-serif';
+    font-family: "Roboto Light", "sans-serif";
     font-size: 32px;
     color: var(--gold);
   }
 
   header {
-    background-image: url('Liftoff.jpg');
+    background-image: url("Liftoff.jpg");
     background-position: 45% 40%;
     background-size: 220%;
     display: block;
@@ -379,7 +381,7 @@ footer a {
 
   footer h2 {
     font-size: 36px;
-    font-family: 'Roboto Medium', 'sans-serif';
+    font-family: "Roboto Medium", "sans-serif";
   }
 
   .rocket-display {
