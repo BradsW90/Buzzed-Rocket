@@ -1,5 +1,22 @@
 //gets current screen width
-var screensWidth = 480;
+var screensWidth = window.innerWidth;
+
+//if needing to test page for anything add dev after the ll
+let rocketApi = "https://lldev.thespacedevs.com/2.2.0/launch/upcoming?limit=8";
+
+//call api
+fetch(rocketApi).then((response) => {
+  //make sure api returned a response
+  if (response.ok) {
+    //turns response into json and then sets up data array for rocket cards
+    response.json().then((data) => {
+      var index = 0;
+      var dataArray = data.results;
+      launch(dataArray, index);
+      //console.log(dataArray);
+    });
+  }
+});
 
 console.log(screensWidth);
 
@@ -113,111 +130,92 @@ var launchAppend = function (dataArray, index) {
   //future call for launch count down
   //countDown(launchTime, statusAbbrev, i);
 };
-let launch = () => {
-  //if needing to test page for anything add dev after the ll
-  let rocketApi =
-    "https://lldev.thespacedevs.com/2.2.0/launch/upcoming?limit=8";
-
-  //call api
-  fetch(rocketApi).then((response) => {
-    //make sure api returned a response
-    if (response.ok) {
-      //turns response into json and then sets up data array for rocket cards
-      response.json().then((data) => {
-        var dataArray = data.results;
-        var index = 0;
-        //console.log(dataArray);
-
-        //checking for mobile screen size
-        if (screensWidth > 480) {
-          //generates all cards to screen since screen is bigger then mobile
-          for (i = 0; i < dataArray.length; i++) {
-            launchAppend(dataArray[i]);
-          }
-          //starts single creation cards
-        } else {
-          //makes previous button element
-          var prevBtn = document.createElement("button");
-          prevBtn.setAttribute("id", "prev-btn");
-          prevBtn.innerText = "<";
-          rocketDisplay.appendChild(prevBtn);
-
-          //calls mini card to create first card and next button element
-          miniCard(dataArray[index], index);
-
-          //setup event listener on card container to listen for button presses
-          rocketDisplay.addEventListener("click", (e) => {
-            //if previous button pressed
-            if (e.target.innerText === "<") {
-              var prevParentEl = e.target.parentNode;
-              var prevCurrentEl = prevParentEl.childNodes;
-
-              //checks to see if current card is beginning of array
-              if (parseInt(prevCurrentEl[1].dataset.index) === 0) {
-                //if beginning of array create card from last array data
-                for (c = 0; c < 2; c++) {
-                  prevCurrentEl[1].remove();
-                }
-                miniCard(dataArray[7], 7);
-                return;
-
-                //if current card is not beginning create card based on last data down
-              } else {
-                //gets last index used
-                var prevRocket = prevCurrentEl[1].dataset.index;
-
-                //removes card and nex button
-                for (b = 0; b < 2; b++) {
-                  prevCurrentEl[1].remove();
-                }
-
-                //decriment current index
-                prevRocket--;
-
-                //create new card and next button based on new index
-                miniCard(dataArray[prevRocket], prevRocket);
-              }
-
-              //in next button is pressed
-            } else if (e.target.innerText === ">") {
-              var parentEl = e.target.parentNode;
-              var currentEl = parentEl.childNodes;
-
-              //check if card is the last in array
-              if (parseInt(currentEl[1].dataset.index) === 7) {
-                //remove card and next button
-                for (c = 0; c < 2; c++) {
-                  currentEl[1].remove();
-                }
-
-                //create first card in array
-                miniCard(dataArray[0], 0);
-                return;
-
-                //if card is not first card in array
-              } else {
-                var nextRocket = currentEl[1].dataset.index;
-
-                //remove current element and next button
-                for (a = 0; a < 2; a++) {
-                  currentEl[1].remove();
-                }
-
-                //increment index
-                nextRocket++;
-
-                //call function to create next card in array and recreate next button
-                miniCard(dataArray[nextRocket], nextRocket);
-              }
-            }
-          });
-        }
-      });
+let launch = (dataArray, index) => {
+  //checking for mobile screen size
+  if (screensWidth > 900) {
+    //generates all cards to screen since screen is bigger then mobile
+    for (i = 0; i < dataArray.length; i++) {
+      launchAppend(dataArray[i]);
     }
-  });
-};
+    //starts single creation cards
+  } else {
+    //makes previous button element
+    var prevBtn = document.createElement("button");
+    prevBtn.setAttribute("id", "prev-btn");
+    prevBtn.innerText = "<";
+    rocketDisplay.appendChild(prevBtn);
 
-launch();
+    //calls mini card to create first card and next button element
+    miniCard(dataArray[index], index);
+
+    //setup event listener on card container to listen for button presses
+    rocketDisplay.addEventListener("click", (e) => {
+      //if previous button pressed
+      if (e.target.innerText === "<") {
+        var prevParentEl = e.target.parentNode;
+        var prevCurrentEl = prevParentEl.childNodes;
+
+        //checks to see if current card is beginning of array
+        if (parseInt(prevCurrentEl[1].dataset.index) === 0) {
+          //if beginning of array create card from last array data
+          for (c = 0; c < 2; c++) {
+            prevCurrentEl[1].remove();
+          }
+          miniCard(dataArray[7], 7);
+          return;
+
+          //if current card is not beginning create card based on last data down
+        } else {
+          //gets last index used
+          var prevRocket = prevCurrentEl[1].dataset.index;
+
+          //removes card and nex button
+          for (b = 0; b < 2; b++) {
+            prevCurrentEl[1].remove();
+          }
+
+          //decriment current index
+          prevRocket--;
+
+          //create new card and next button based on new index
+          miniCard(dataArray[prevRocket], prevRocket);
+        }
+
+        //in next button is pressed
+      } else if (e.target.innerText === ">") {
+        var parentEl = e.target.parentNode;
+        var currentEl = parentEl.childNodes;
+
+        //check if card is the last in array
+        if (parseInt(currentEl[1].dataset.index) === 7) {
+          //remove card and next button
+          for (c = 0; c < 2; c++) {
+            currentEl[1].remove();
+          }
+
+          //create first card in array
+          miniCard(dataArray[0], 0);
+          return;
+
+          //if card is not first card in array
+        } else {
+          var nextRocket = currentEl[1].dataset.index;
+
+          //remove current element and next button
+          for (a = 0; a < 2; a++) {
+            currentEl[1].remove();
+          }
+
+          //increment index
+          nextRocket++;
+
+          //call function to create next card in array and recreate next button
+          miniCard(dataArray[nextRocket], nextRocket);
+        }
+      }
+    });
+  }
+};
 
 const apiKey =
   "pk.eyJ1IjoiZGViYWppdDA2NDciLCJhIjoiY2w0OHJnZHpnMDE1bjNtb3kzd2tudTFldCJ9.fDKOaixKnGmY77NnyoL-LQ";
