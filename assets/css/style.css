@@ -107,7 +107,7 @@ h2 {
   font-size: small;
   color: white;
 }
-
+/* Changes for mobile made*/
 /* sets up cards to be flex to apporpiately size img*/
 .rocket-card {
   height: 350px;
