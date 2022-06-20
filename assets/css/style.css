@@ -35,7 +35,7 @@ header {
 }
 
 header p {
-  color: var(--brown)
+  color: var(--brown);
 }
 
 header img {
@@ -312,7 +312,7 @@ footer {
 }
 
 footer p {
-  color: var(--brown)
+  color: var(--brown);
 }
 
 footer a {
@@ -321,15 +321,30 @@ footer a {
 }
 
 footer a:hover {
-  color: var(--brown)
+  color: var(--brown);
 }
 
 .mapboxgl-canvas-container {
   height: 30vh;
 }
 
-@media screen and (min-width: 900px) {
+.rocket-display button {
+  font-size: 22px;
+  padding: 4px 2px 7px 2px;
+  text-align: center;
+  height: fit-content;
+  width: fit-content;
+  margin: auto;
+  align-items: center;
+}
 
+.rocket-display button:hover {
+  background-image: linear-gradient(to top, rgb(100, 100, 220), rgb(0, 0, 0));
+  color: white;
+  transition: background-image 2s;
+}
+
+@media screen and (min-width: 900px) {
   /* for desktop display */
   body {
     font-family: "Roboto Light", "sans-serif";
@@ -427,18 +442,6 @@ footer a:hover {
 
   .button {
     margin-left: 0;
-  }
-
-  .rocket-display button {
-    font-size: 22px;
-    padding: 4px 2px 7px 2px;
-    text-align: center;
-  }
-
-  .rocket-display button:hover {
-    background-image: linear-gradient(to top, rgb(100, 100, 220), rgb(0, 0, 0));
-    color: white;
-    transition: background-image 2s;
   }
 }
 
