@@ -34,6 +34,10 @@ header {
   border-top: var(--brown) 20px solid;
 }
 
+header p {
+  color: var(--brown)
+}
+
 header img {
   flex: 0;
   width: 230px;
@@ -49,6 +53,7 @@ header img {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -57,7 +62,7 @@ header img {
 .cntr-content {
   text-align: center;
   font-weight: bolder;
-  font-size: 50px;
+  font-size: 28px;
   color: black;
   font-family: "Times New Roman", Times, serif;
   animation: fadeIn 5s;
@@ -111,7 +116,9 @@ h2 {
   overflow-x: auto;
   overscroll-behavior-inline: contain;
 }
+
 /* Changes for mobile made*/
+main {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -120,9 +127,10 @@ h2 {
 
 .rocket-display h2 {
   flex: 1 100%;
-  font-size: 30px;
+  font-size: 20px;
   color: var(--gold);
 }
+
 /* sets up cards to be flex to apporpiately size img*/
 .rocket-card {
   height: 300px;
@@ -134,6 +142,7 @@ h2 {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  color: var(--white);
 }
 
 .rocket-name {
@@ -185,9 +194,10 @@ h2 {
 
 .button {
   margin-left: 30px;
-  margin-right: 10%;
+  margin-right: auto;
   margin-top: 10px;
   margin-bottom: 10px;
+  float: right;
 }
 
 .dropdown-menu {
@@ -199,10 +209,9 @@ h2 {
 }
 
 .search-history-label {
-  font-family: "Times New Roman", Times, serif;
   font-weight: bolder;
   font-size: larger;
-  color: #9ec8ca;
+  color: var(--gold);
 }
 
 .search-results-container {
@@ -220,6 +229,7 @@ h2 {
   /* text-decoration: underline; */
   cursor: pointer;
 }
+
 /* .search-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -233,12 +243,12 @@ h2 {
   margin-left: 80%;
 }
 
-.main-container {
+/* .main-container {
   margin-left: 0;
   margin-right: 0;
   height: 175vh;
   border-radius: 10px;
-}
+} */
 
 .field {
   text-align: center;
@@ -248,23 +258,24 @@ h2 {
   margin: 10px;
 }
 
-/* .search-history-container {
+.search-history-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-} */
+}
 
 .search-item {
-  width: 90px;
-  height: 90px;
+  width: 50px;
+  height: 50px;
   text-align: center;
-  padding-top: 35px;
+  padding: 18px 0 18px 0;
   margin: 5px;
   background-color: #ffff;
   display: inline-block;
   font-weight: bold;
   border: #d7b668;
   border-radius: 7px;
+  font-size: 10px;
 }
 
 .search-history-container {
@@ -301,14 +312,25 @@ footer {
   background-color: var(--gold);
 }
 
+footer p {
+  color: var(--brown)
+}
+
 footer a {
   text-align: center;
+  color: var(--brown);
 }
+
+footer a:hover {
+  color: var(--brown)
+}
+
 .mapboxgl-canvas-container {
   height: 30vh;
 }
 
 @media screen and (min-width: 900px) {
+
   /* for desktop display */
   body {
     font-family: "Roboto Light", "sans-serif";
@@ -336,6 +358,14 @@ footer a {
 
   header p {
     margin: 0 300px 0 300px;
+  }
+
+  .field {
+    text-align: center;
+    border: 3px solid var(--gold);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 10px;
   }
 
   .bdr-btm {
@@ -395,6 +425,11 @@ footer a {
     font-size: small;
     color: white;
   }
+
+  .button {
+    margin-left: 0;
+  }
+
   .rocket-display button {
     font-size: 22px;
     padding: 4px 2px 7px 2px;
