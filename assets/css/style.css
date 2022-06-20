@@ -100,12 +100,18 @@ h2 {
 
 /* sets up main container to be flex*/
 .rocket-display {
-  display: flex;
+  /*display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   font-size: small;
-  color: white;
+  color: white;*/
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 23%;
+  gap: 8em;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
 }
 /* Changes for mobile made*/
 /* sets up cards to be flex to apporpiately size img*/
