@@ -8,15 +8,20 @@
   --gold: #d7b668;
   --sky-blue: #9ec8ca;
   --white: #ffffff;
+  --good-color: rgb(225, 225, 100);
+  --bad-color: rgb(225, 100, 100);
+  --no-color: rgb(150, 150, 150);
+  --flight-color: rgb(100, 225, 100);
 }
 
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Roboto Regular', sans-serif;
+  font-family: "Roboto Regular", sans-serif;
   color: var(--brown);
   background-color: var(--brown);
 }
@@ -41,8 +46,12 @@ header img {
 }
 
 @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .cntr-content {
@@ -50,8 +59,8 @@ header img {
   font-weight: bolder;
   font-size: 50px;
   color: black;
-  font-family: 'Times New Roman', Times, serif;
-  animation: fadeIn 5s
+  font-family: "Times New Roman", Times, serif;
+  animation: fadeIn 5s;
 }
 
 .hdr-border {
@@ -87,17 +96,6 @@ h2 {
   padding-bottom: 20px;
 }
 
-/* main setup for styling and color variables*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  --good-color: rgb(225, 225, 100);
-  --bad-color: rgb(225, 100, 100);
-  --no-color: rgb(150, 150, 150);
-  --flight-color: rgb(100, 225, 100);
-}
-
 /* sets up main container to be flex*/
 .rocket-display {
   /*display: flex;
@@ -114,14 +112,26 @@ h2 {
   overscroll-behavior-inline: contain;
 }
 /* Changes for mobile made*/
-/* sets up cards to be flex to apporpiately size img*/
-.rocket-card {
-  height: 350px;
-  width: 200px;
-  background-image: linear-gradient(rgb(0, 0, 0), rgb(50, 50, 175));
-  margin: 15px;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.rocket-display h2 {
+  flex: 1 100%;
+  font-size: 30px;
+  color: var(--gold);
+}
+/* sets up cards to be flex to apporpiately size img*/
+.rocket-card {
+  height: 300px;
+  width: 200px;
+  background-image: linear-gradient(rgb(0, 0, 0), rgb(50, 50, 175));
+  margin: 10px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -167,9 +177,7 @@ h2 {
 .flight-color {
   color: var(--flight-color);
 }
-.error-message {
-  color: red;
-}
+
 .dropdown-item:hover,
 .dropdown-item:focus {
   background-color: #9ec8ca !important;
@@ -187,16 +195,11 @@ h2 {
 }
 
 #map {
-  position: relative;
-  margin-top: 200px;
-  margin-left: 30px;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
+  display: block;
 }
 
 .search-history-label {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   font-weight: bolder;
   font-size: larger;
   color: #9ec8ca;
@@ -217,18 +220,6 @@ h2 {
   /* text-decoration: underline; */
   cursor: pointer;
 }
-
-.list-items {
-  background: #ffffff;
-  width: fit-content;
-  height: fit-content;
-  border-radius: 10px;
-  font-weight: bold;
-  color: black;
-  line-height: 1.6;
-  text-decoration: underline;
-}
-
 /* .search-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -245,15 +236,16 @@ h2 {
 .main-container {
   margin-left: 0;
   margin-right: 0;
-  border: 3px solid #4b372b;
-  width: 45vw;
-  height: 90vh;
+  height: 175vh;
   border-radius: 10px;
 }
 
 .field {
-  margin-left: 30px;
-  margin-right: 30px;
+  text-align: center;
+  border: 3px solid var(--gold);
+  border-radius: 15px;
+  padding: 30px;
+  margin: 10px;
 }
 
 /* .search-history-container {
@@ -296,7 +288,7 @@ h2 {
 .search-wrap {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-evenly;
 }
 
 /* .search-wrap-right {
@@ -312,17 +304,20 @@ footer {
 footer a {
   text-align: center;
 }
+.mapboxgl-canvas-container {
+  height: 30vh;
+}
 
 @media screen and (min-width: 900px) {
   /* for desktop display */
   body {
-    font-family: 'Roboto Light', 'sans-serif';
+    font-family: "Roboto Light", "sans-serif";
     font-size: 32px;
     color: var(--gold);
   }
 
   header {
-    background-image: url('Liftoff.jpg');
+    background-image: url("Liftoff.jpg");
     background-position: 45% 40%;
     background-size: 220%;
     display: block;
@@ -364,14 +359,6 @@ footer a {
     flex-wrap: wrap;
     padding: 0;
     justify-content: space-around;
-  }
-
-  .alt-content {
-    display: flex;
-    flex: wrap;
-    flex-wrap: wrap;
-    padding: 0;
-    justify-content: space-around;
     width: 600px;
     height: 600px;
     margin: 42px 0 0 0;
@@ -396,20 +383,34 @@ footer a {
 
   footer h2 {
     font-size: 36px;
-    font-family: 'Roboto Medium', 'sans-serif';
+    font-family: "Roboto Medium", "sans-serif";
   }
 
   .rocket-display {
     display: flex;
     flex: 2;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     font-size: small;
     color: white;
   }
+  .rocket-display button {
+    font-size: 22px;
+    padding: 4px 2px 7px 2px;
+    text-align: center;
+  }
 
-  .mapboxgl-canvas-container {
-    height: 50vh;
+  .rocket-display button:hover {
+    background-image: linear-gradient(to top, rgb(100, 100, 220), rgb(0, 0, 0));
+    color: white;
+    transition: background-image 2s;
+  }
+}
+
+@media screen and (max-width: 1500) {
+  .rocket-display {
+    overflow-y: auto;
+    overflow-x: auto;
   }
 }

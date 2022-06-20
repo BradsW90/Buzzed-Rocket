@@ -1,39 +1,31 @@
-# Buzzed Rocket
+# BUZZ ROCKET
 
-## Acceptence Criteria
+Buzz Rocket is a space tourism website at its initial stage of development where user will be able to search for space launches worldwide and at the same time will be able to search for any nearby point of interest. The webpage provides you with visual experience with the helo of launch cards and maps for the location you are searching for and also saves the search history for future reference.
+In future development of the webpage , user will be able to share location with friends to join them for space launch, adding more point of interest to cater to different spectrum of customers. We would also add navigation from your current location to the space launch destination as well as nearby point of interest. Feature will be added to publish your journey in social media e.g. facebook or instrgram or personnal blog.There will be comments section added to the website inviting feedback how to improve the webpage.
 
-### Project Requirements
+## Authors
 
-- Use a CSS framework other than Bootstrap.
+[@Bradley Woodle](https://github.com/BradsW90)
+[@Davon Webb](https://github.com/Davon95)
+[@debajitboro](https://www.github.com/deb-boro)
+[@Esteban Leonardo](https://github.com/EstebanLVB)
 
-- Be deployed to GitHub Pages.
+## Features
 
-- Be interactive (i.e., accept and respond to user input).
+A space tourism website with space launch location , date and point of interest search.
 
-- Use at least two server-side APIs.
+## Tech Stack
 
-- Does not use alerts, confirms, or prompts (use modals).
+html
+bulma.io CSS Framework (https://bulma.io/)
+The Space Devs API (https://thespacedevs.com/)
+MapBox API (https://www.mapbox.com/)
+JavaScript
 
-- Use client-side storage to store persistent data.
+## Link to Deployment
 
-- Be responsive.
+Copy and paste below link in any browser:
 
-- Have a polished UI.
+## Screenshot
 
-- Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
-
-- Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
-
-### Presentation Requirements
-
-- Elevator pitch: A one-minute description of your application.
-
-- Concept: What is your user story? What was your motivation for development?
-
-- Process: What were the technologies used? How were tasks and roles broken down and assigned? What challenges did you encounter? What were your successes?
-
-- Demo: Show your stuff!
-
-- Directions for future development.
-
-- Links to the deployed application and the GitHub repository.
+![Screenshot]
