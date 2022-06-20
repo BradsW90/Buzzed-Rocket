@@ -111,12 +111,11 @@ h2 {
   overflow-x: auto;
   overscroll-behavior-inline: contain;
 }
-/* Changes for mobile made*/
+/* Changes for mobile made
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  width: 100%;
-}
+  width: 100%;*/
 
 .rocket-display h2 {
   flex: 1 100%;
