@@ -98,6 +98,20 @@ h2 {
 
 /* sets up main container to be flex*/
 .rocket-display {
+  /*display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: small;
+  color: white;*/
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 23%;
+  gap: 8em;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+/* Changes for mobile made*/
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -109,7 +123,6 @@ h2 {
   font-size: 30px;
   color: var(--gold);
 }
-
 /* sets up cards to be flex to apporpiately size img*/
 .rocket-card {
   height: 300px;
