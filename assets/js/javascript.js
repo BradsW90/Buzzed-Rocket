@@ -156,10 +156,10 @@ let launch = (dataArray, index) => {
         var prevCurrentEl = prevParentEl.childNodes;
 
         //checks to see if current card is beginning of array
-        if (parseInt(prevCurrentEl[1].dataset.index) === 0) {
+        if (parseInt(prevCurrentEl[4].dataset.index) === 0) {
           //if beginning of array create card from last array data
           for (c = 0; c < 2; c++) {
-            prevCurrentEl[1].remove();
+            prevCurrentEl[4].remove();
           }
           miniCard(dataArray[7], 7);
           return;
@@ -167,11 +167,11 @@ let launch = (dataArray, index) => {
           //if current card is not beginning create card based on last data down
         } else {
           //gets last index used
-          var prevRocket = prevCurrentEl[1].dataset.index;
+          var prevRocket = prevCurrentEl[4].dataset.index;
 
           //removes card and nex button
           for (b = 0; b < 2; b++) {
-            prevCurrentEl[1].remove();
+            prevCurrentEl[4].remove();
           }
 
           //decriment current index
@@ -187,10 +187,10 @@ let launch = (dataArray, index) => {
         var currentEl = parentEl.childNodes;
 
         //check if card is the last in array
-        if (parseInt(currentEl[1].dataset.index) === 7) {
+        if (parseInt(currentEl[4].dataset.index) === 7) {
           //remove card and next button
           for (c = 0; c < 2; c++) {
-            currentEl[1].remove();
+            currentEl[4].remove();
           }
 
           //create first card in array
@@ -199,11 +199,11 @@ let launch = (dataArray, index) => {
 
           //if card is not first card in array
         } else {
-          var nextRocket = currentEl[1].dataset.index;
+          var nextRocket = currentEl[4].dataset.index;
 
           //remove current element and next button
           for (a = 0; a < 2; a++) {
-            currentEl[1].remove();
+            currentEl[4].remove();
           }
 
           //increment index
