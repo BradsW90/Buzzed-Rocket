@@ -316,7 +316,7 @@ footer a {
   }
 
   header {
-    background-image: url("Liftoff.jpg");
+    background-image: url("./liftoff.jpg");
     background-position: 45% 40%;
     background-size: 220%;
     display: block;
