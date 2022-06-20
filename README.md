@@ -28,4 +28,5 @@ Copy and paste below link in any browser:
 
 ## Screenshot
 
-![Screenshot]
+![Screenshot](./assets/images/screenshot-active.jpg)
+[https://bradsw90.github.io/Buzzed-Rocket/](https://bradsw90.github.io/Buzzed-Rocket/)
