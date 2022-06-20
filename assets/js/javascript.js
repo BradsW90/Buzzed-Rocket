@@ -132,7 +132,7 @@ var launchAppend = function (dataArray, index) {
 };
 let launch = (dataArray, index) => {
   //checking for mobile screen size
-  if (screensWidth > 900) {
+  if (screensWidth > 0) {
     //generates all cards to screen since screen is bigger then mobile
     for (i = 0; i < dataArray.length; i++) {
       launchAppend(dataArray[i]);
